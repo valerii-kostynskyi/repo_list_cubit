@@ -79,9 +79,10 @@ class HomeListView extends StatelessWidget {
           if (index < list.length) {
             return ItemRepositoryWidget(
               repository: list[index],
-              onTap: () {
+              onIconTap: () {
                 context.read<HomeCubit>().toggleFavoriteRepo(list[index]);
               },
+              onTap: () => Navigator.of(context).pushNamed('/detail'),
             );
           } else {
             return const CircularIndicator();

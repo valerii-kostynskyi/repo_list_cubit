@@ -12,9 +12,12 @@ class FavoritePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Favorite page'),
-        leading: SVGIconWidget(
-          icon: 'icon_left',
-          onTap: () => Navigator.of(context).pop(),
+        leading: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SVGIconWidget(
+            icon: 'icon_left',
+            onTap: () => Navigator.of(context).pop(),
+          ),
         ),
       ),
       body: BlocProvider(

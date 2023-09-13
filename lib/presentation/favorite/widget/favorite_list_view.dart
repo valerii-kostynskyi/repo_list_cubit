@@ -30,9 +30,10 @@ class FavoriteListView extends StatelessWidget {
       itemCount: repoList.length,
       itemBuilder: (context, index) => ItemRepositoryWidget(
         repository: repoList[index],
-        onTap: () {
+        onIconTap: () {
           context.read<FavoriteCubit>().removeFromFavorites(repoList[index]);
         },
+        onTap: () => Navigator.of(context).pushNamed('/detail'),
       ),
     );
   }

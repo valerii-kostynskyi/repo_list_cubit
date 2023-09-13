@@ -4,11 +4,13 @@ import 'package:repo_list_cubit/presentation/components/svg_icon_widget.dart';
 
 class ItemRepositoryWidget extends StatelessWidget {
   final RepositoryModel repository;
+  final Function()? onIconTap;
   final Function()? onTap;
 
   const ItemRepositoryWidget({
     Key? key,
     required this.repository,
+    required this.onIconTap,
     required this.onTap,
   }) : super(key: key);
 
@@ -31,6 +33,7 @@ class ItemRepositoryWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SVGIconWidget(
+              onTap: onIconTap,
               icon: 'icon_star',
               color: repository.isFavorite
                   ? Theme.of(context).colorScheme.primary

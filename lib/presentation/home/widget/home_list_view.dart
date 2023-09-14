@@ -4,6 +4,7 @@ import 'package:repo_list_cubit/data/model/repository_model.dart';
 import 'package:repo_list_cubit/presentation/components/circular_widget.dart';
 import 'package:repo_list_cubit/presentation/components/input_text_field_widget.dart';
 import 'package:repo_list_cubit/presentation/components/item_repository_widget.dart';
+import 'package:repo_list_cubit/presentation/detail/detail_page.dart';
 import 'package:repo_list_cubit/presentation/home/cubit/home_cubit.dart';
 
 class HomeListView extends StatelessWidget {
@@ -82,7 +83,11 @@ class HomeListView extends StatelessWidget {
               onIconTap: () {
                 context.read<HomeCubit>().toggleFavoriteRepo(list[index]);
               },
-              onTap: () => Navigator.of(context).pushNamed('/detail'),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetailPage(repository: list[index]),
+                ),
+              ),
             );
           } else {
             return const CircularIndicator();

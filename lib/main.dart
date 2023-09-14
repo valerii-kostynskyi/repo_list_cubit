@@ -8,7 +8,6 @@ import 'package:repo_list_cubit/domain/repository/favorite_rpository.dart';
 import 'package:repo_list_cubit/domain/repository/home_repository.dart';
 import 'package:repo_list_cubit/domain/repository/impl/favorite_repository_impl.dart';
 import 'package:repo_list_cubit/domain/repository/impl/home_repository_impl.dart';
-import 'package:repo_list_cubit/presentation/detail/detail_page.dart';
 import 'package:repo_list_cubit/presentation/favorite/favorite_page.dart';
 import 'package:repo_list_cubit/presentation/home/home_page.dart';
 import 'package:repo_list_cubit/presentation/style/theme.dart';
@@ -41,7 +40,6 @@ class MyApp extends StatelessWidget {
       home: const HomePage(),
       routes: <String, WidgetBuilder>{
         '/favorites': (BuildContext context) => const FavoritePage(),
-        '/detail': (BuildContext context) => const DetailPage(),
       },
     );
   }

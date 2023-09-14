@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:repo_list_cubit/data/model/repository_model.dart';
 import 'package:repo_list_cubit/presentation/components/item_repository_widget.dart';
+import 'package:repo_list_cubit/presentation/detail/detail_page.dart';
 import 'package:repo_list_cubit/presentation/favorite/cubit/favorite_cubit.dart';
 
 class FavoriteListView extends StatelessWidget {
@@ -33,7 +34,11 @@ class FavoriteListView extends StatelessWidget {
         onIconTap: () {
           context.read<FavoriteCubit>().removeFromFavorites(repoList[index]);
         },
-        onTap: () => Navigator.of(context).pushNamed('/detail'),
+        onTap: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => DetailPage(repository: repoList[index]),
+          ),
+        ),
       ),
     );
   }
